@@ -1,0 +1,39 @@
+# SOLID Principles
+
+Uncle Bob put them together
+
+Interestingly, they can be applied to things other than static OO languages. Will try to demonstrate
+
+# Single Object Responsibility
+
+Applies to classes, to methods, to modules, namespaces, projects
+
+# Open/Closed Principle
+
+Two different versions. Older version Meyer's. Uncle Bob recoined based on avoiding inheritance
+
+# Liskov Substitution Principle
+
+Quite more involved than I originally tought.
+
+# Interface Segregation
+
+Use small interfaces. Don't use a single interface to cover a whole class.
+
+Interface segregation is more difficult when the logic to handle an object is outside that object.
+It is an incorrect use of objects. The logic of the object should reside inside the object. 
+Is it always possible. Well not really, that is why you use things like the strategy pattern.
+But can we mixed them? Of course.
+
+Is it still possible in dynamic languages? Yes it is. If we look at interface segregation from
+the point of view of the caller, what we have is that the caller should know only a handful 
+methods from the callee object. Three at most, I will say.
+
+# Dependency Inversion
+
+Make higher levels of abstraction not depend on lower levels.
+
+There are three ways to avoid dependency
+- Service Locator
+- Dependency Injection
+- Duck typing

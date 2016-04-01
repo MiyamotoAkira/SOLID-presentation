@@ -35,6 +35,16 @@
     <Compile Include="1 - NoSingleObject\AllMixed.cs" />
     <Compile Include="2 - SingleObject\Account.cs" />
     <Compile Include="2 - SingleObject\AccountHolder.cs" />
+    <Compile Include="3 - NoOpenClosed\Principal.cs" />
+    <Compile Include="3 - NoOpenClosed\Secondary.cs" />
+    <Compile Include="3 - NoOpenClosed\Terciary.cs" />
+    <Compile Include="4 - OpenClosed\MeyerPrincipal.cs" />
+    <Compile Include="4 - OpenClosed\MeyerTerciary.cs" />
+    <Compile Include="4 - OpenClosed\UncleBobPrincipal.cs" />
+    <Compile Include="4 - OpenClosed\UncleBobSecondary.cs" />
+    <Compile Include="4 - OpenClosed\UncleBobTerciary.cs" />
+    <Compile Include="4 - OpenClosed\MeyerSecondaryA.cs" />
+    <Compile Include="4 - OpenClosed\MeyerSecondaryB.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

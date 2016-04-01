@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NotSingleObject
+namespace SolidPrinciples.NoSingleObject
 {
     public class AllMixed
     {
@@ -14,7 +14,7 @@ namespace NotSingleObject
 
         public string FirstName {get;}
         public string LastName {get;}
-        public List<string> Address {get;}
+        public List <string> Address {get;}
         public decimal Balance {get;}
 
 

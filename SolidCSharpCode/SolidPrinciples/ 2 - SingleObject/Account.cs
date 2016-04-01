@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SingleObject
+namespace SolidPrinciples.SingleObject
 {
     public class Account
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SingleObject
+namespace SolidPrinciples.SingleObject
 {
     public class AccountHolder
     {
