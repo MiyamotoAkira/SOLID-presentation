@@ -4,7 +4,29 @@ using System.Linq;
 
 namespace SolidPrinciples.SingleObject
 {
-    public class AccountHolder
+    public class AccountBase
+    {
+        private Guid accountHolderId;
+
+        public AccountBase(Guid accountId)
+        {
+            accountHolderId = accountId;
+        }
+
+        public decimal Balance { get; private set;}
+
+        public void Deposit(decimal money)
+        {
+            Balance += money;
+        }
+
+        public void Withdraw(decimal money)
+        {
+            Balance -= money;
+        }
+    }
+
+	public class AccountHolder
     {
         public AccountHolder(string firstName, string lastName)
         {
@@ -19,15 +41,14 @@ namespace SolidPrinciples.SingleObject
 
         public string LastName { get; }
 
-        public List<string> Address { get; }
+        public List<string> Address { get; private set;}
 
         public void ModifyAddress(List<string> newAddress)
         {
-            string[] temporal;
+            string[] temporal = new string[newAddress.Count];
             newAddress.CopyTo(temporal);
             Address = temporal.ToList();
         }           
     }
 }
-
 

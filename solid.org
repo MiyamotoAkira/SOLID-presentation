@@ -1,22 +1,54 @@
-# SOLID Principles
+* SOLID Principles Intro
 
-Uncle Bob put them together
+What are the SOLID principles? There are a set of advice on how to create OO code. The code
+should benefit on readability, good behaviour and maintanability.
 
-Interestingly, they can be applied to things other than static OO languages. Will try to demonstrate
+The menmonic was put together by Michael Feathers for the first five set of principles that
+Uncle Bob talk about in http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
 
-# Single Object Responsibility
+Uncle Bob has expressed before that these are not rules. And that they will not teach how to
+code, but knowledge of them should improve your code.
 
-Applies to classes, to methods, to modules, namespaces, projects
+Interestingly, they can be applied to things other than static OO languages. Will try to 
+demonstrate some cases as we go along.
 
-# Open/Closed Principle
+For each of the principles I will give the definition, will explain them a bit more, 
+will look at possible pitfalls and will show code before and after applying the principle
 
-Two different versions. Older version Meyer's. Uncle Bob recoined based on avoiding inheritance
+* Single Object Responsibility
 
-# Liskov Substitution Principle
+*A class should have one, and only one, reason to change.*
+https://drive.google.com/file/d/0ByOwmqah_nuGNHEtcU5OekdDMkk/view?pli=1
 
-Quite more involved than I originally tought.
+It is about cohesion.
 
-# Interface Segregation
+Applies to: classes, methods, modules, namespaces, projects. Basically everything. 
+
+Single reason to change.
+
+You have to account for the level of abstraction to understand what is that 
+responsibility/reason to change.
+
+* Open/Closed Principle
+
+*You should be able to extend a classes behavior, without modifying it.*
+https://drive.google.com/file/d/0BwhCYaYDn8EgN2M5MTkwM2EtNWFkZC00ZTI3LWFjZTUtNTFhZGZiYmUzODc1/view
+
+Two different versions. Older version Meyer's. It is based on using inheritance.
+Uncle Bob recoined based on avoiding inheritance, using abstract classes/interfaces.
+
+* Liskov Substitution Principle
+
+*Derived classes must be substitutable for their base classes.*
+https://drive.google.com/file/d/0BwhCYaYDn8EgNzAzZjA5ZmItNjU3NS00MzQ5LTkwYjMtMDJhNDU5ZTM0MTlh/view
+
+Quite more involved than I originally tought. Is not just about interface subtyping. It involves 
+behaviour subtyping.
+
+* Interface Segregation
+
+*Make fine grained interfaces that are client specific.*
+https://drive.google.com/file/d/0BwhCYaYDn8EgOTViYjJhYzMtMzYxMC00MzFjLWJjMzYtOGJiMDc5N2JkYmJi/view
 
 Use small interfaces. Don't use a single interface to cover a whole class.
 
@@ -29,11 +61,30 @@ Is it still possible in dynamic languages? Yes it is. If we look at interface se
 the point of view of the caller, what we have is that the caller should know only a handful 
 methods from the callee object. Three at most, I will say.
 
-# Dependency Inversion
+* Dependency Inversion
 
-Make higher levels of abstraction not depend on lower levels.
+*Depend on abstractions, not on concretions.*
+https://drive.google.com/file/d/0BwhCYaYDn8EgMjdlMWIzNGUtZTQ0NC00ZjQ5LTkwYzQtZjRhMDRlNTQ3ZGMz/view
+
+Make higher level moudles not depend on lower level modules.
 
 There are three ways to avoid dependency
-- Service Locator
-- Dependency Injection
-- Duck typing
+	- Dependency Injection. There are three types of injection: 
+	  - Constructor
+		Dependencies are passsed on the constructor of the object.
+	  - Method
+		Dependencies are passed on a method. The dependency should have a default implementation or it should be optional.
+	  - Property
+		Really like the above, on languages that provide automated getter/setters.
+    - Service Locator. Dependency on the service locator permeates all over. In general,
+	  don't use.
+	  MVC forced you to use it if you wanted to have your own security system.
+	- Monkey patching
+	  Eliminates dependencies because you can change the object 
+	  before using it.
+
+There are three constructs that help on dependency inversion:
+    - Interfaces
+    - First Class functions (delegates in C# parlance)
+    - Duck typing
+	  Makes the interface implicit

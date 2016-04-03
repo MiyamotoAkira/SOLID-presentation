@@ -1,0 +1,11 @@
+{
+  "authors": [
+    "Jorge Gueorguiev Garcia"
+  ],
+  "frameworks": {
+    "dnx451": {}
+  },
+  "dependencies": {
+  },
+  "compile": "*.cs"
+}

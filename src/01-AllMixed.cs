@@ -12,15 +12,15 @@ namespace SolidPrinciples.NoSingleObject
             LastName = lastName;
         }
 
-        public string FirstName {get;}
-        public string LastName {get;}
-        public List <string> Address {get;}
-        public decimal Balance {get;}
+        public string FirstName {get; private set;}
+        public string LastName {get; private set;}
+        public List <string> Address {get; private set;}
+        public decimal Balance {get; private set;}
 
 
         public void ModifyAddress (List<string> newAddress)
         {
-            string[] temporal;
+            string[] temporal = null;
             newAddress.CopyTo(temporal);
             Address = temporal.ToList();
         }
@@ -36,4 +36,3 @@ namespace SolidPrinciples.NoSingleObject
         }
     }
 }
-
