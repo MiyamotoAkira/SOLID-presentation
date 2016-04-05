@@ -27,7 +27,7 @@ namespace SolidPrinciples.SegregatedInterface
 
         public void Withdraw(decimal amount)
         {
-            _balance += amount;
+            _balance -= amount;
         }
     }
 

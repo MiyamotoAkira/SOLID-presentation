@@ -1,5 +1,27 @@
-namespace SolidPrinciples.DependencyInjection
+using System.Collections.Generic;
+
+namespace SolidPrinciples.DependencyInjectionA
 {
+	public static class ServiceLocator
+	{
+		private static Dictionary<string, object> _services;
+		
+		static ServiceLocator()
+		{
+			_services = new Dictionary<string, object>();
+		}
+
+		public static void AddService(string key, object service)
+		{
+			_services.Add(key, service);
+		}
+
+		public static object Retrieve(string key)
+		{
+			return _services[key];
+		}
+	}
+	
 	public interface Account
 	{
 		void Deposit(decimal amount);
@@ -52,9 +74,9 @@ namespace SolidPrinciples.DependencyInjection
 	{
 		private Account _account;
 		
-		public ATM (Account account)
+		public ATM ()
 		{
-			_account = account;
+			_account = ServiceLocator.Retrieve("account") as Account;
 		}
 
 		public void WithdrawOperation(decimal amount)
