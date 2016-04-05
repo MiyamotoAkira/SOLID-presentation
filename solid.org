@@ -1,13 +1,16 @@
 * SOLID Principles Intro
 
-What are the SOLID principles? There are a set of advice on how to create OO code. The code
-should benefit on readability, good behaviour and maintanability.
+What are the SOLID principles? There are a set of advice on how to create OO code.
 
 The menmonic was put together by Michael Feathers for the first five set of principles that
 Uncle Bob talk about in http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
 
 Uncle Bob has expressed before that these are not rules. And that they will not teach how to
 code, but knowledge of them should improve your code.
+
+The code should benefit on readability, good behaviour and maintanability. Except for Liskov,
+which is the odd one out. Liskov will assert that the behaviour of your program remains
+consistent.
 
 Interestingly, they can be applied to things other than static OO languages. Will try to 
 demonstrate some cases as we go along.
