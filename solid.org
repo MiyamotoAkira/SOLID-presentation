@@ -76,7 +76,9 @@ There are three ways to avoid dependency
 	  - Constructor
 		Dependencies are passsed on the constructor of the object.
 	  - Method
-		Dependencies are passed on a method. The dependency should have a default implementation or it should be optional.
+		Dependencies are passed on a method. The dependency should have a default 
+	    implementation or it should be optional. Useful with method, objects that come from the
+		framework (like DateTime)
 	  - Property
 		Really like the above, on languages that provide automated getter/setters.
     - Service Locator. Dependency on the service locator permeates all over. In general,
@@ -84,7 +86,8 @@ There are three ways to avoid dependency
 	  MVC forced you to use it if you wanted to have your own security system.
 	- Monkey patching
 	  Eliminates dependencies because you can change the object 
-	  before using it.
+	  before using it. Careful with Javascript until version 5, as it uses prototyping. You can
+	  monkey patch, but will affect only objects created after the prototype has been created.
 
 There are three constructs that help on dependency inversion:
     - Interfaces

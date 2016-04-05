@@ -57,14 +57,14 @@ namespace SolidPrinciples.DependencyInjection
 			_account = account;
 		}
 
+		public void SetAccount(Account account)
+		{
+			_account = account;
+		}
+		
 		public void WithdrawOperation(decimal amount)
 		{
 			_account.Withdraw(amount);
-		}
-
-		public void WithdrawOperation2(Account account, decimal amount)
-		{
-			account.Withdraw(amount);
 		}
 	}
 }
